@@ -10,7 +10,7 @@ public class HelloWorldController {
     public String helloWorld(){
         return "Hello World";
     }
-///asdas
+///asdas1243123
     @GetMapping("hello-world-bean")
     public HelloWorldBean helloWorldBean(){
         return new HelloWorldBean("Hello World");
