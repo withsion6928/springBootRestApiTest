@@ -40,4 +40,15 @@ class UserContoller {
                 .toUri();
         return ResponseEntity.created(location).build();
     }
+
+
+    @DeleteMapping("/users/{id}")
+    public void deleteUsers(@PathVariable int id)
+    {
+        User user = service.deleteByid(id);
+        if(user == null){
+            throw new UserNotFoundException(String.format("Id[%s] not found", id));
+
+        }
+    }
 }
