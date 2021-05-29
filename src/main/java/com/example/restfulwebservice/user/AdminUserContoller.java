@@ -20,8 +20,18 @@ class AdminUserContoller {
     }
 
     @GetMapping("/users")
-    public List<User> retrieveAllusers(){
-        return service.finaAll();
+    public MappingJacksonValue retrieveAllusers(){
+        List<User> users = service.finaAll();
+
+        SimpleBeanPropertyFilter filter =  SimpleBeanPropertyFilter.filterOutAllExcept("id","name","joinDate","password");
+
+        FilterProvider filterProvider = new SimpleFilterProvider().addFilter("UserInfo",filter);
+        MappingJacksonValue mappingJacksonValue = new MappingJacksonValue(users);
+
+        mappingJacksonValue.setFilters(filterProvider);
+
+        return mappingJacksonValue;
+
     }
     @GetMapping("/users/{id}")
     public MappingJacksonValue retrieveUser(@PathVariable int id){
