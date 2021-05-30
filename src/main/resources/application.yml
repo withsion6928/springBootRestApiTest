@@ -4,3 +4,9 @@ server:
 logging:
   level:
     org.springframework: ERROR
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
