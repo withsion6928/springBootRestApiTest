@@ -9,15 +9,21 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Date;
 //devlop branch test
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ApiModel(description = "사용자 상세정보를 위한 도메인 객체")
+@Entity
 //@JsonIgnoreProperties(value = {"password"})
 //@JsonFilter("UserInfo")
 public class User {
+    @Id
+    @GeneratedValue
     private Integer id;
 
     @ApiModelProperty(notes = "사용자 이름을 입력해 주세요")
