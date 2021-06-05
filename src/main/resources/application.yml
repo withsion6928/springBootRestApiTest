@@ -17,5 +17,5 @@ spring:
     basename: messages
   security:
     user:
-      name: username
-      password: 1q2w3e4r5t
+      name: user
+      password: 12345
