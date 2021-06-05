@@ -75,12 +75,6 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-
 
 <!--//swarger-ui 페이지 호출하려면 아래 2.9.2 버전 사용-->
 <!--        <dependency>-->
